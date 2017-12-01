@@ -1,36 +1,19 @@
-var habit ={
-    title: "",
-    notes: "",
-    tags: [],
-    frequency: 0,
-    points: 0,
-    status: "",
-    completed: false,
-    difficulty: 0,
-    Habit: function(title) {
-        this.title = title;
-        return this;
-    },
-    getTitle: function() {
-        return this.title;
-    }
+function Habit(title, notes, frequency){
+    this.title = title;
+    this.notes = notes;
+    this.frequency = frequency
+}
 
-};
+Habit.prototype.setTitle = function(t){this.title = t;};
+Habit.prototype.setNote = function(t){this.note = t;};
+Habit.prototype.setFrequency = function(t){this.frequency = t;};
+Habit.prototype.getTitle = function(){return this.title;};
 
-var todo  = {
-    title: "",
-    tags: [],
-    completed: false,
-    deadline: Date,
-
-};
-
-var h1 = habit;
-h1.Habit("test");
-console.log(h1.title)
-
-
-
+var h1 = new Habit("Test", "This is a test Habit" , 3);
+function onClick(){
+	console.log(h1.getTitle());
+	alert("Hello");
+}
 
 
 
