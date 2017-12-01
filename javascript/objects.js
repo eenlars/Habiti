@@ -7,9 +7,15 @@ var habit ={
     status: "",
     completed: false,
     difficulty: 0,
+    Habit: function(title) {
+        this.title = title;
+        return this;
+    },
+    getTitle: function() {
+        return this.title;
+    }
 
-
-}
+};
 
 var todo  = {
     title: "",
@@ -17,4 +23,14 @@ var todo  = {
     completed: false,
     deadline: Date,
 
-}
+};
+
+var h1 = habit;
+h1.Habit("test");
+console.log(h1.title)
+
+
+
+
+
+
