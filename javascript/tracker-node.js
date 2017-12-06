@@ -9,8 +9,8 @@ http.createServer(app).listen(port);
 console.log("Listening on port " +  port + "...");
 
 var habits = [];
-var h1 = {"name":"Habit 1","description":"This is Habit 1"};
-var h2 = {"name":"Habit 2","description":"This is Habit 2"};
+var h1 = {"name":"Habit1","description":"This is Habit 1"};
+var h2 = {"name":"Habit2","description":"This is Habit 2"};
 
 habits.push(h1);
 habits.push(h2);
@@ -42,4 +42,38 @@ app.get("",function(req, res) {
     res.write("Welcome to the Home Page");
     res.end();
 
+});
+
+//client wants to update
+app.get("/update", function(req, res) {
+    //check what the params are
+    var url_parts = url.parse(req.url, true);
+    var query = url_parts.query;
+    var old_name = query["name"];
+    var new_name = query["nname"];
+    var new_desc = query["ndescription"];
+    //actual update
+    var goback = "<a href='habits'>Click here to go back</a>";
+    if(old_name !== undefined) {
+        habits.forEach(function(habit){
+            if(habit.name === old_name){
+                if(new_name !== undefined){
+                    habit.name = new_name;
+                    console.log("Name has been updated");
+                }
+                habit.name = new_name;
+                if(new_desc !== undefined){
+                    habit.description = new_desc;
+                    console.log("Description for this habit has been updated");
+                }
+                res.writeHead(200);
+                res.write("Succesfully Updated" + goback);
+                res.end();
+                console.log("Update Successful");
+            }
+        });
+    }else {
+        res.write("Please specify habit");
+        console.log("habit not found");
+    }
 });
