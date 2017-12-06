@@ -77,3 +77,32 @@ app.get("/update", function(req, res) {
         console.log("habit not found");
     }
 });
+
+//deleting a habit
+app.get("/delete", function(req, res) {
+    //check what the params are
+    var url_parts = url.parse(req.url, true);
+    var query = url_parts.query;
+
+    var name = query["name"];
+   
+    //actual deletion
+    var goback = "";
+    if(name !== undefined) {
+        habits.forEach(function(habit){
+            if(habit.name === name){
+                var index = habits.indexOf(habit);
+                if(index !== -1){
+                    habits.splice(index, 1);
+                    res.writeHead(200);
+                    res.write("Successfully deleted Habit");
+                    res.end();
+                console.log("Delete Successful");
+                }
+            }
+        });
+    }else {
+        res.write("Please specify habit");
+        console.log("habit not found");
+    }
+});
