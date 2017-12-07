@@ -12,6 +12,7 @@ var habits = [];
 var h1 = {"name":"Habit1","description":"This is Habit 1"};
 var h2 = {"name":"Habit2","description":"This is Habit 2"};
 
+
 habits.push(h1);
 habits.push(h2);
 //when client visits localhost:3000/addtodo and specifies values.
