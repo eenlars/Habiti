@@ -2,7 +2,7 @@ var http = require('http');
 var port = 3000;
 var url = require('url');
 var express = require("express");
-
+var wJ  = require('write-json-file');
 var app = express();
 app.use(express.static(__dirname +"/client"));
 http.createServer(app).listen(port);
@@ -19,12 +19,14 @@ habits.push(h2);
 app.get("/addHabit", function(req, res) {
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
-
+    var hname = query["name"].stripslashes;
+    var hdescription = query["description"].stripslashes;
     if(query["name"] !== undefined){
-        var text = {name : query["name"],
-        description: query["description"]
+        var text = {name : hname,
+        description: hdescription
         };
     habits.push(text);
+    wJ('../habits.json', habits ).then(console.log("Habit Added to File!"));
     console.log("Added habit: " + text.name);
     res.end("Habit added succesfully.");
     }else {
