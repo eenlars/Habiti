@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="tracker.css">
 </head>
 
-<body>
+<body onload="loadContents()">
     <header class="container">
         <a href="index.html">
             <h1 id='logo'>Habiti</h1>
@@ -28,37 +28,42 @@
             <div class='habits db-sec' id="habitbox">
                 <h2>Your Habits:</h2>
                 <form>
-                    <input type="text" id="habit">
+                    <input type="text" id="habit" onkeydown="if (event.keyCode == 13)
+                        ; javascript:void(0)">
                     <button id='add-habit' type="button" onclick="addElement('habit')">+</button>
                 </form>
                 <p></p>
                 <table id="habittable">
                     <tr>
+                        <td>Run every day</td>
+                        <td><button onclick="deleteElement('habit', this )">delete</button></td>
+                        <td><button>change</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="to-do db-sec" id="todobox">
+                <h2>Your To-Do's:</h2>
+                <form>
+                    <input type="text" id="todo" onkeydown="if (event.keyCode == 13)
+                        addElement('todo'); javascript:void(0)">
+                    <button id='add-todo' type="button" onclick="addElement('todo')">+</button>
+                </form>
+                <p></p>
+                <table id="todotable">
+                    <tr>
                         <td>
-                            blabla
+                            Finish W&D Assignment 3
                         </td>
                         <td>
-                            <button>yo</button>
+                            <button id="delete-todo" type="button" onclick="deleteElement('todo',this)">delete</button>
                         </td>
                     </tr>
                 </table>
             </div>
 
-            <div class="to-do db-sec" id="todobox">
-                <h2>Your To-Do's:</h2>
-                <form>
-                    <input type="text" id="todo">
-                    <button id='add-habit' type="button" onclick="addElement('todo')">+</button>
-                </form>
-                <p></p>
-                <table id="todotable">
-                </table>
-            </div>
-
             <div class="profile db-sec">
 
-                <h1>Profile
-                </h1>
+                <h1>Profile</h1>
                 <img src="#">
                 <p>this is where the profile pic should go </p>
                 <h1>A+</h1>
@@ -66,9 +71,20 @@
                 <span><h3>*name*</h3></span>
                 <span><h3>*email*</h3></span>
                 <span><h4>Experience Bar (Progress over time)</h4></span>
-                <div class='invite-friends'>
-                    <p>This is where the 'Invite Friends' section goes.</p>
-                </div>
+                <p>This is where the 'Invite Friends' section goes.</p>
+            </div>
+
+        </div>
+        <div id="row">
+            <div class="view db-sec">
+                <h2>view or change habit</h2>
+                <form>
+                    <h3>title:</h3>
+                    <input type="text" value="">
+                    <h3>do this every:</h3>
+                    <input type="text" value="">
+                </form>
+                <button onclick="javascript:void(0)">submit change</button>
             </div>
         </div>
     </main>

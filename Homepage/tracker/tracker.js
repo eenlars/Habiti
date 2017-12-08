@@ -1,17 +1,33 @@
 function addElement(type) {
-    var text = document.getElementById(type).value;
-    document.getElementById(type).value = "";
-    console.log(text);
-    var tr = document.createElement("tr"); //maak een nieuwe aan
-    var td = document.createElement("td"); //maak een nieuwe aan
-    var i = document.createElement("td"); //maak een nieuwe aan
-    var button = document.createElement("button");
-    var insidetext = document.createTextNode(text); //stop text in de node
-    button.appendChild(document.createTextNode("i"))
-    td.appendChild(insidetext);
-    i.appendChild(button);
-    tr.appendChild(td);
-    tr.appendChild(i);
-    var element = document.getElementById(type + "table");
-    element.appendChild(tr);
+  var gettext = document.getElementById(type).value;
+  var insidetext = document.createTextNode(gettext); //stop text in de node
+  document.getElementById(type).value = "";
+  var tr = document.createElement("tr"); //maak een nieuwe aan
+  var text = document.createElement("td"); //maak een nieuwe aan
+  var deletetext = document.createElement("td");
+  var changebutton = document.createElement("td");
+  var button = document.createElement("button");
+  var buttoninfo = document.createElement("button");
+  button.setAttribute("onclick", "deleteElement('" + type + "', this )");
+  buttoninfo.setAttribute("onclick", "changeElement(this)");
+  button.appendChild(document.createTextNode("delete"));
+  buttoninfo.appendChild(document.createTextNode("change"));
+  text.appendChild(insidetext);
+  changebutton.appendChild(buttoninfo); //
+  deletetext.appendChild(button); //
+  tr.appendChild(text); //kindje aanmaken met text voor tr
+  tr.appendChild(deletetext); //kindje aanmaken voor tr
+  tr.appendChild(changebutton); //kindje aanmaken voor tr
+  var element = document.getElementById(type + "table"); //tafel pakken en daar je tdtje in gooien
+  element.appendChild(tr); //trtje aanmaken
+}
+
+function deleteElement(type, button) {
+  var row = button.parentNode.parentNode; //deze gooit de row naar de tr ipv button
+  row.parentNode.removeChild(row); // hier pakt de row de parentnode en verwijderd de removechild van de row
+}
+
+function changeElement(button){
+  var row = button.parentNode.parentNode; //deze gooit de row naar de tr ipv button
+  console.log(row);
 }
