@@ -1,8 +1,12 @@
+var idcount = 0;
+
 function addElement(type) {
   var gettext = document.getElementById(type).value;
   var insidetext = document.createTextNode(gettext); //stop text in de node
   document.getElementById(type).value = "";
   var tr = document.createElement("tr"); //maak een nieuwe aan
+  tr.setAttribute("id", "number"+idcount);
+  idcount++;
   var text = document.createElement("td"); //maak een nieuwe aan
   var deletetext = document.createElement("td");
   var changebutton = document.createElement("td");
@@ -29,5 +33,5 @@ function deleteElement(type, button) {
 
 function changeElement(button){
   var row = button.parentNode.parentNode; //deze gooit de row naar de tr ipv button
-  console.log(row);
+  console.log(row.id);
 }
