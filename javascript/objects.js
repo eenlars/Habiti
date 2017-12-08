@@ -1,16 +1,24 @@
-function Habit(title, notes, frequency){
+/*
+Here, we initiate the object with the attributes of the object.
+*/
+
+Habit.prototype.Habit = function habit(title, note, frequency, tags, difficulty, points, status, completed){
     this.title = title;
-    /*
-	tags, difficulty , points, status, completed
-
-
-
-    */
+    this.note = note;
+    this.frequency = frequency;
+    this.tags = tags;
+    this.difficulty = difficulty;
+    this.points = points;
+    this.status = status;
+    this.completed = completed;
 }
 
+/*
+Here, we see the prototype setters. In these functions, we set the local
+variables of the current object.
+*/
+
 Habit.prototype.setTitle = function(t){this.title = t;};
-
-
 Habit.prototype.setNote = function(t){this.note = t;};
 Habit.prototype.setFrequency = function(t){this.frequency = t;};
 Habit.prototype.setTags = function(t){this.tags = t;};
@@ -20,7 +28,10 @@ Habit.prototype.setStatus = function(t){this.status = t;};
 Habit.prototype.setCompleted = function(t){this.completed = t;};
 
 
-
+/*
+Here, we see the prototype getters. In these functions, we return the local
+variables of the current object.
+*/
 Habit.prototype.getTitle = function(){return this.title;};
 Habit.prototype.getNotes = function(){return this.notes;};
 Habit.prototype.getFrequency = function(){return this.frequency;};
