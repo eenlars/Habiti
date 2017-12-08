@@ -44,14 +44,16 @@ var main = function () {
         };
     };
     
-    function update() {
+  function update() {
         
         $.getJSON("http://localhost:3000/habits", addHabitList);
         
 
     }
-   
-    var interval = setInterval(update, 7000);
-   
+   update();
+    //var interval = setInterval(update, 7000);
+  
+  
+ 
 };
 $(document).ready(main);
