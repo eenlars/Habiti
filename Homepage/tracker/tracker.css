@@ -63,3 +63,17 @@ tr {}
 table button {
     width: 6em;
 }
+
+#profilepic {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 75px;
+    width: 75px;
+    border-radius: 55%;
+  }
+  
+  #profilepic img {
+    height: 100%;
+    margin-left: -25%;
+  }
