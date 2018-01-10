@@ -15,7 +15,6 @@ main {
 header .container,
 main .container {
     max-width: 855px;
-    margin: auto;
 }
 
 header h1 {
@@ -92,7 +91,6 @@ html {
 
 body {
     position: relative;
-    margin: 0;
     padding-bottom: 6rem;
     min-height: 100%;
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -217,11 +215,6 @@ body {
     }
 }
 
-.db-sec {
-    border: 1px solid black;
-
-}
-
 main {
     display: table;
     width: 100%;
@@ -233,6 +226,7 @@ main {
 }
 
 .db-sec {
+    border: 1px solid black;
     display: table-cell;
     background-color: #FFF7DC;
     width: 33%;
