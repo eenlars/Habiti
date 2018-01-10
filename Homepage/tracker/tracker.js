@@ -17,8 +17,8 @@ function addElement(type) {
   button.appendChild(document.createTextNode("delete"));
   buttoninfo.appendChild(document.createTextNode("change"));
   text.appendChild(insidetext);
-  changebutton.appendChild(buttoninfo); //
-  deletetext.appendChild(button); //
+  changebutton.appendChild(buttoninfo); 
+  deletetext.appendChild(button); 
   tr.appendChild(text); //kindje aanmaken met text voor tr
   tr.appendChild(deletetext); //kindje aanmaken voor tr
   tr.appendChild(changebutton); //kindje aanmaken voor tr
