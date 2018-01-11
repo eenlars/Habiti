@@ -4,6 +4,27 @@ var url = require('url');
 var express = require("express");
 var wJ  = require('write-json-file');
 var app = express();
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password: "bapaogang",
+    database : "habits"
+});
+var habits =[];
+var getdb = function(id) {
+    con.connect(function(err){
+        if(err) throw err;
+        console.log("Connected!");
+        var sql = "SELECT * FROM habit WHERE habit_list_id IN (SELECT id FROM habit_list WHERE owner=1);";
+        con.query(sql, function(err, result, fields) {
+            if(err) throw err;
+            habits = result;
+        });
+    });
+};
+
 app.use(express.static(__dirname +"/client"));
 http.createServer(app).listen(port);
 console.log("Listening on port " +  port + "...");
