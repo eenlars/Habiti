@@ -19,7 +19,10 @@ Habit.prototype.setPoints = function(t){this.points = t;};
 Habit.prototype.setStatus = function(t){this.status = t;};
 Habit.prototype.setCompleted = function(t){this.completed = t;};
 
-
+var f1 = function() {
+    x=2;
+    
+}
 
 Habit.prototype.getTitle = function(){return this.title;};
 Habit.prototype.getNotes = function(){return this.notes;};
