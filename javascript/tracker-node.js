@@ -20,6 +20,7 @@ var getdb = function(id) {
         var sql = "SELECT * FROM habit WHERE habit_list_id IN (SELECT id FROM habit_list WHERE owner=1);";
         con.query(sql, function(err, result, fields) {
             if(err) throw err;
+            console.log(result);
             habits = result;
         });
     });
