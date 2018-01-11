@@ -8,15 +8,8 @@
 		"description": "This is Habit 2"
 	},
 	{
-		"name": "\"HabitNeel\"",
-		"description": "\"ThisisahabitofNeel\""
+		"name": "Habit3",
+		"description": "This is Habit 3"
 	},
-	{
-		"name": "\"HabitNeel\"",
-		"description": "\"ThisisahabitofNeel2\""
-	},
-	{
-		"name": "\"HabitNeel\"",
-		"description": "\"ThisisahabitofNeel2\""
-	}
+	{}
 ]

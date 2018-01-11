@@ -11,10 +11,11 @@ console.log("Listening on port " +  port + "...");
 var habits = [];
 var h1 = {"name":"Habit1","description":"This is Habit 1"};
 var h2 = {"name":"Habit2","description":"This is Habit 2"};
+var h3 = {"name":"Habit3","description":"This is Habit 3"};
 
+//put the habits in an array called habits
+habits.push(h1,h2,h3);
 
-habits.push(h1);
-habits.push(h2);
 //when client visits localhost:3000/addtodo and specifies values.
 app.get("/addHabit", function(req, res) {
     var url_parts = url.parse(req.url, true);
@@ -88,6 +89,7 @@ app.get("/habitss", function(req,res) {
 app.get("/updatee", function(req,res) {
     res.redirect("/update");
 });
+//routing parameters as well
 app.get("/deletee", function(req,res) {
     res.redirect('/delete' + "?" + url.parse(req.url, true).query["name"]);
 });
