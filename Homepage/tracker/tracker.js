@@ -35,7 +35,7 @@ function deleteElement(type, button) {
 
 function changeElement(button){
   var row = button.parentNode.parentNode; //deze gooit de row naar de tr ipv button
-  var inserttitle = document.getElementById("changetitle");
+  var inserttitle = document.getElementById("changename");
   var inputtitle = inserttitle.childNodes[1];
   var text = button.parentNode.parentNode.childNodes[0];
   inputtitle.value = text.innerHTML;

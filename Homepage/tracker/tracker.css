@@ -1,9 +1,9 @@
 h1:hover
 {
-        opacity:0.5;
+    opacity:0.5;
 }
 
-h2{
+.overview h2{
     animation: animatie 3s;
 }
 
@@ -58,35 +58,29 @@ table {
     position: absolute;
 }
 
-tr {}
-
 table button {
     width: 6em;
 }
 
-    #profilepic {
+#profilepic {
     position: relative;
-    display: inline-block;
+    display: block;
     overflow: hidden;
     height: 75px;
     width: 75px;
     border-radius: 55%;
 }
 
-    #profilepic img {
+#profilepic img {
     height: 100%;
     margin-left: -25%;
 }
 
-.weekdays{
-    margin-left:-30px;
-}
-
-.weekdays input[type="checkbox"] {
+.checkboxbutton input[type="checkbox"],input[type="radio"] {
     display: none;
 }
 
-.weekdays label {
+.checkboxbutton label {
     display: inline-block;
     background-color: #ddd;
     padding: 4px 11px;
@@ -94,6 +88,10 @@ table button {
     cursor: pointer;
 }
   
-.weekdays input[type="checkbox"]:checked+label {
+.checkboxbutton input[type="checkbox"]:checked+label {
+    background-color: rgb(128, 172, 230);
+}
+
+.checkboxbutton input[type="radio"]:checked+label {
     background-color: rgb(128, 172, 230);
 }
