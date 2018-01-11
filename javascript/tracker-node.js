@@ -81,6 +81,20 @@ app.get("/update", function(req, res) {
     }
 });
 
+//when there's a mistake
+app.get("/habitss", function(req,res) {
+    res.redirect("/habitss");
+});
+app.get("/updatee", function(req,res) {
+    res.redirect("/update");
+});
+app.get("/deletee", function(req,res) {
+    res.redirect('/delete' + "?" + url.parse(req.url, true).query["name"]);
+});
+app.get("/addHabitt", function(req,res) {
+    res.redirect("/addHabit");
+});
+
 //deleting a habit
 app.get("/delete", function(req, res) {
     //check what the params are
