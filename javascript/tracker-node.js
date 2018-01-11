@@ -13,30 +13,22 @@ var con = mysql.createConnection({
     database : "habits"
 });
 var habits =[];
-var getdb = function(id) {
     con.connect(function(err){
         if(err) throw err;
         console.log("Connected!");
         var sql = "SELECT * FROM habit WHERE habit_list_id IN (SELECT id FROM habit_list WHERE owner=1);";
         con.query(sql, function(err, result, fields) {
             if(err) throw err;
-<<<<<<< HEAD
-=======
-            console.log(result);
->>>>>>> 0b96608003ab6f5cb0553185b3be85f899b117ab
             habits = result;
         });
     });
-};
 
-app.use(express.static(__dirname +"/client"));
+
+
+app.use(express.static(__dirname +'/client'));
 http.createServer(app).listen(port);
 console.log("Listening on port " +  port + "...");
 
-
-
-//put the habits in an array called habits
-habits.push(h1,h2,h3);
 
 //when client visits localhost:3000/addtodo and specifies values.
 app.get("/addHabit", function(req, res) {
@@ -59,11 +51,7 @@ app.get("/addHabit", function(req, res) {
 
 //when client requests habits
 app.get("/habits", function(req,res) {
-    var url_parts = url.parse(req.url, true);
-    var query = url_parts.query;
     console.log("Habits Requested");
-    var id = query["id"];
-    getdb(id);
     res.json(habits);
 });
 
@@ -83,10 +71,7 @@ app.get("/update", function(req, res) {
     var new_name = query["nname"];
     var new_desc = query["ndescription"];
     //actual update
-<<<<<<< HEAD
     //var goback = "<a href='habits'>Click here to go back</a>";
-=======
->>>>>>> 0b96608003ab6f5cb0553185b3be85f899b117ab
     if(old_name !== undefined) {
         habits.forEach(function(habit){
             if(habit.name === old_name){
