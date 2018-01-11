@@ -20,10 +20,6 @@ var getdb = function(id) {
         var sql = "SELECT * FROM habit WHERE habit_list_id IN (SELECT id FROM habit_list WHERE owner=1);";
         con.query(sql, function(err, result, fields) {
             if(err) throw err;
-<<<<<<< HEAD
-=======
-            console.log(result);
->>>>>>> 0b96608003ab6f5cb0553185b3be85f899b117ab
             habits = result;
         });
     });
@@ -83,10 +79,7 @@ app.get("/update", function(req, res) {
     var new_name = query["nname"];
     var new_desc = query["ndescription"];
     //actual update
-<<<<<<< HEAD
     //var goback = "<a href='habits'>Click here to go back</a>";
-=======
->>>>>>> 0b96608003ab6f5cb0553185b3be85f899b117ab
     if(old_name !== undefined) {
         habits.forEach(function(habit){
             if(habit.name === old_name){
@@ -100,7 +93,7 @@ app.get("/update", function(req, res) {
                     console.log("Description for this habit has been updated");
                 }
                 res.writeHead(200);
-                res.write("Succesfully Updated");
+                res.write("Succesfully Updated" + goback);
                 res.end();
                 console.log("Update Successful");
             }

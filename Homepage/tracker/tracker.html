@@ -4,6 +4,7 @@
 <head>
     <title>Habiti | Home</title>
     <script src="tracker.js"></script>
+    <script src="../../javascript/client-app.js"></script>
     <link rel="stylesheet" type="text/css" href="../../main.css">
     <link rel="stylesheet" type="text/css" href="tracker.css">
 </head>
@@ -47,6 +48,7 @@
                     <input type="text" id="todo" onkeydown="if (event.keyCode == 13)
                         addElement('todo'); javascript:void(0)">
                     <button id='add-todo' type="button" onclick="addElement('todo')">+</button>
+                    <button type="button" onclick="update()">Load Habits</button>
                 </form>
                 <p></p>
                 <table id="todotable">
@@ -54,6 +56,9 @@
                         <td>
                             Finish W&D Assignment 3
                         </td>
+                        <ul id="habit-list">
+                            
+                        </ul>
                         <td>
                             <button id="delete-todo" type="button" onclick="deleteElement('todo',this)">delete</button>
                         </td>
