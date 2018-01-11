@@ -57,7 +57,6 @@ app.get("/update", function(req, res) {
     var new_name = query["nname"];
     var new_desc = query["ndescription"];
     //actual update
-    var goback = "<a href='habits'>Click here to go back</a>";
     if(old_name !== undefined) {
         habits.forEach(function(habit){
             if(habit.name === old_name){
@@ -71,7 +70,7 @@ app.get("/update", function(req, res) {
                     console.log("Description for this habit has been updated");
                 }
                 res.writeHead(200);
-                res.write("Succesfully Updated" + goback);
+                res.write("Succesfully Updated");
                 res.end();
                 console.log("Update Successful");
             }
