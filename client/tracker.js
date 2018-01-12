@@ -1,4 +1,4 @@
-var idcount = 0;
+/*var idcount = 0;
 
 function addElement(type) {
   var gettext = document.getElementById(type).value;
@@ -28,6 +28,8 @@ function addElement(type) {
   }
 }
 
+
+
 function deleteElement(type, button) {
   var row = button.parentNode.parentNode; //deze gooit de row naar de tr ipv button
   row.parentNode.removeChild(row); // hier pakt de row de parentnode en verwijderd de removechild van de row
@@ -39,4 +41,24 @@ function changeElement(button){
   var inputtitle = inserttitle.childNodes[1];
   var text = button.parentNode.parentNode.childNodes[0];
   inputtitle.value = text.innerHTML;
+} */
+
+var addHabits = function (habits) {
+  var list = document.getElementById("habit-list");
+  for (var key in habits) {
+    var li = document.createElement("li");
+    li.innerHTML = habits[key].title;
+    list.appendChild(li);
+    var change = document.createElement("button");
+    li.appendChild(change);
+    change.innerHTML = "Edit";
+    
+    change.setAttribute("onclick","change("+habits[key].id+")");
+
+    
+  }
+};
+var change = function(id) {
+  console.log(id);
 }
+$.getJSON("habits", addHabits);
