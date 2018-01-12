@@ -42,23 +42,53 @@ function changeElement(button){
   var text = button.parentNode.parentNode.childNodes[0];
   inputtitle.value = text.innerHTML;
 } */
-
+var habits_global = []
 var addHabits = function (habits) {
   var list = document.getElementById("habit-list");
   for (var key in habits) {
+    habits_global.push(habits[key]);
     var li = document.createElement("li");
     li.innerHTML = habits[key].title;
     list.appendChild(li);
     var change = document.createElement("button");
     li.appendChild(change);
     change.innerHTML = "Edit";
-    
-    change.setAttribute("onclick","change("+habits[key].id+")");
+    but = "change(" + key + ")"; 
+    change.setAttribute("onclick",but);
+    change.setAttribute("class","edit");
+
+
+    var deleteb = document.createElement("button");
+    li.appendChild(deleteb);
+    deleteb.innerHTML = "X";
+    but = "delete(" + key + ")"; 
+    deleteb.setAttribute("onclick",but);
+    deleteb.setAttribute("class","edit");
 
     
-  }
+  };
+  console.log(habits_global);
+  
 };
-var change = function(id) {
-  console.log(id);
-}
+
+
+var change = function (key) {
+  var infield = document.getElementById('title');
+  infield.setAttribute("value", habits_global[key].title);
+  var desc = document.getElementById('description');
+  desc.setAttribute("value", habits_global[key].description);
+  var freq = document.getElementById('frequency');
+  freq.setAttribute("value", habits_global[key].frequency_id);
+  var id_h = document.getElementById('id');
+  id_h.setAttribute("value", habits_global[key].id);
+};
+
+var get = function () {
 $.getJSON("habits", addHabits);
+}();
+
+var update = function() {
+  $.getJSON("update", function() {
+    window.alert("Updated Successfuly");
+  });
+}();
