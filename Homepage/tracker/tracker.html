@@ -1,73 +1,144 @@
 <!DOCTYPE HTML>
-	<html>
-	<head>
-		<title>Habiti | Home</title>
-        <script src="tracker.js"></script>
-        <link rel="stylesheet" type="text/css" href="../../main.css">
-	</head>
-	<body>
-		<header class="container">
-			<a href="index.html"><h1 id='logo'>Habiti</h1></a>
-			<nav>
-				<a href='#'>Log In</a> |
-				<a href='#'>Support</a> |
-				<a href='#'>About Us</a> |
-				<a href='tracker.html'>Dashboard</a>			
-			</nav>
-		</header>
-		<main class="container">
-			<div class='overview'>
-				<h2>Welcome to Habiti *First name*!</h2>
-			</div>
+<html>
 
-			<div id='row'>
-			<div class='habits db-sec' id="habitbox">
-				<h2>Your Habits:</h2>
-				<input type="text" name="habit" id="habit">
-				<button id='add-habit' onclick="addElement('habit')">+</button>
-		
-				</div>
+<head>
+    <title>Habiti | Home</title>
+    <script src="tracker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="tracker.css">
+</head>
 
+<body>
+    <header class="container">
+        <a href="index.html">
+            <h1 id='logo'>Habiti</h1>
+        </a>
+        <nav>
+            <a href='#'>Support</a>
+            <a href='#'>About Us</a>
+            <a href='tracker.html'>Dashboard</a>
+        </nav>
+    </header>
+    <main class="container">
+        <div class='overview'>
+            <h2>Welcome to Habiti *First name*!</h2>
+        </div>
 
-		
-			<div class="to-do db-sec" id="todobox">
-				<h2>Your To-Do's:</h2>
-				<input type="text" name="new-to-do" id="todo">
-				<button id='add-to-do' onclick="addElement('todo')">+</button>
-		
-				</div>
+        <div id='row'>
+            <div class='habits db-sec' id="habitbox">
+                <h2>Your Habits:</h2>
+                <form>
+                    <input type="text" id="habit" onkeydown="if (event.keyCode == 13)
+                        ; javascript:void(0)">
+                    <button id='add-habit' type="button" onclick="addElement('habit')">+</button>
+                </form>
+                <p></p>
+                <table id="habittable">
+                    <tr>
+                        <td>Run every day</td>
+                        <td><button onclick="deleteElement('habit', this )">delete</button></td>
+                        <td><button>change</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="to-do db-sec" id="todobox">
+                <h2>Your To-Do's:</h2>
+                <form>
+                    <input type="text" id="todo" onkeydown="if (event.keyCode == 13)
+                        addElement('todo'); javascript:void(0)">
+                    <button id='add-todo' type="button" onclick="addElement('todo')">+</button>
+                </form>
+                <p></p>
+                <table id="todotable">
+                    <tr>
+                        <td>
+                            Clean the stairs
+                        </td>
+                        <td>
+                            <button id="delete-todo" type="button" onclick="deleteElement('todo',this)">delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-		
-			<div class="profile db-sec">
-			
-			<h1>Profile
-				</h1>
-				<img src="#">
-				<p>this is where the profile pic should go </p>
-				<h1>A+</h1><p>This is the Rating</p>
-				<span><h3>*name*</h3></span>
-				<span><h3>*email*</h3></span>
-				<span><h4>Experience Bar (Progress over time)</h4></span>
-				<div class='invite-friends'><p>This is where the 'Invite Friends' section goes.</p></div>
-				</div>
-			
+            <div class="view db-sec">
+                    <h2>view or change habit</h2>
+                    <form>
+                        <h3 id="changename">Name:<input type="text" value=""></h3>
+                        
+                        <h3 id="changenotes">notes:</h3>
+                        <input type="text" value="">
+                        <h3 id="changefrequency">do this every:</h3>
+                            <div class="checkboxbutton">
+                                <input type="checkbox" id="check1">
+                                <label for="check1">Mon</label>
+                                <input type="checkbox" id="check2">
+                                <label for="check2">Tue</label>
+                                <input type="checkbox" id="check3">
+                                <label for="check3">Wed</label>
+                                <input type="checkbox" id="check4">
+                                <label for="check4">Thu</label>
+                                <input type="checkbox" id="check5">
+                                <label for="check5">Fri</label>
+                                <input type="checkbox" id="check6">
+                                <label for="check6">Sat</label>
+                                <input type="checkbox" id="check7">
+                                <label for="check7">Sun</label>
+                            </div>
+                        <h3 id="changetag">tag:</h3>
+                        <input type="text" value="">
+                        <h3 id="changedifficulty">difficulty: (10 is very hard)</h3>
+                        <div class="checkboxbutton">
+                                <input type="radio" name="difficulty" id="check10">
+                                <label for="check10">1</label>
+                                <input type="radio" name="difficulty" id="check11">
+                                <label for="check11">2</label>
+                                <input type="radio" name="difficulty" id="check12">
+                                <label for="check12">3</label>
+                                <input type="radio" name="difficulty" id="check13">
+                                <label for="check13">4</label>
+                                <input type="radio" name="difficulty" id="check14">
+                                <label for="check14">5</label>
+                                <input type="radio" name="difficulty" id="check15">
+                                <label for="check15">6</label>
+                                <input type="radio" name="difficulty" id="check16">
+                                <label for="check16">7</label>
+                                <input type="radio" name="difficulty" id="check17">
+                                <label for="check17">8</label>
+                                <input type="radio" name="difficulty" id="check18">
+                                <label for="check18">9</label>
+                                <input type="radio" name="difficulty" id="check19">
+                                <label for="check19">10</label>
+    
+                            </div>
+                        <h3 id="changepoints">points:</h3>
+                        <input type="text" value="">
+                        <h3 id="changestatus">status:</h3>
+                        <input type="text" value="">
+                        <h3 id="changecompleted">completed?</h3>
+                        <div class="checkboxbutton">
+                            <input type="radio" name="bool" id="check8">
+                            <label for="check8">Yes</label>
+                            <input type="radio" name="bool" id="check9">
+                            <label for="check9">No</label>
+                        </div>
+                    </form>
+                    <button onclick="javascript:void(0)" style="margin-top:10px">submit change</button>
+                </div>
 
-	</div></main></body></html>
-		</main>
-		<hr>
+        </div><!--
+        <div id="row">
+                <div class="profile db-sec">
+                    <h1>Profile</h1>
+                    <div id="profilepic" >
+                        <img src="https://images.unsplash.com/photo-1455758190477-ac7265bc8139">
+                    </div>
+                    <h3>You're doing very good!</h3>
+                    <span><h3>*name*</h3></span>
+                    <span><h3>*email*</h3></span>
+                </div>
+        </div>-->
+    </main>
+</body>
 
-		<footer class="container">
-			<div class='copyright'>
-			</div>
-			<div class='sitemap'>
-				<h5>Sitemap</h5>
-				<ul>
-					<li>Home</li>
-					<li>Support</li>
-					<li>About Us</li>
-					<li>Dashboard</li>
-				</ul>
-			</div>
-		</footer>
-	</body>
-	</html>
+</html>

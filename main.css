@@ -1,34 +1,42 @@
-
-header, main, footer {
-	min-width: 855px;
-}
-header {
-	background: #f7f7f7;
-	overflow: auto;
-}
+header,
 main {
-	background: #f7f7f7;
+    min-width: 855px;
 }
-header .container, main .container, footer .container {
-	max-width: 855px;
-	margin: auto;
+
+header {
+    background: #f7f7f7;
+    overflow: auto;
 }
+
+main {
+    background: #f7f7f7;
+}
+
+header .container,
+main .container {
+    max-width: 855px;
+}
+
 header h1 {
-	float: left;
-	width: 570px;
-	color:#09504F;
-	font-size:70px;
-	margin-bottom:-30px;
+    float: left;
+    width: 570px;
+    color: #09504F;
+    font-size: 70px;
+    margin-bottom: -30px;
 }
-.overview h2{
-    color:#172A40;
-    font-size:40px;
+
+.overview h2 {
+    color: #172A40;
+    font-size: 40px;
 }
+
 header nav {
-	float: right;
-	width: 285px;
+    float: right;
+    width: 285px;
 }
-input[type=text], input[type=password] {
+
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -36,7 +44,8 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-button {
+
+form button {
     background-color: #D9383A;
     color: white;
     padding: 7px 10px;
@@ -45,60 +54,63 @@ button {
     cursor: pointer;
     width: 50%;
 }
-.cancelbtn,.signupbtn {
+
+.cancelbtn,
+.signupbtn {
     float: left;
     width: 50%;
 }
+
 .container {
-	padding: 16px;
+    padding: 16px;
 
 }
+
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
+
 .sign-up {
-	float: right;
-	width: 50%;
-	
+    float: right;
+    width: 50%;
+
 }
-footer {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 1rem;
-	background: #efefef;
-	
-}
+
 html {
-  height: 100%;
-  box-sizing: border-box;
+    height: 100%;
+    box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
+
 body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
 }
+
 .sitemap {
-	float: right;
-	width: 20%;
+    float: right;
+    width: 20%;
 }
-* {box-sizing:border-box}
+
+* {
+    box-sizing: border-box
+}
 
 /* Slideshow container */
+
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
 }
 
 .mySlides {
@@ -106,103 +118,122 @@ body {
 }
 
 /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
 }
 
 /* Position the "next button" to the right */
+
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
+
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
 }
 
 /* Number text (1/3 etc) */
+
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
 }
 
 /* The dots/bullets/indicators */
+
 .dot {
-  cursor:pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.active,
+.dot:hover {
+    background-color: #717171;
 }
 
 /* Fading animation */
+
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
-.db-sec {
-	border: 1px solid black;
 
-}	
 main {
-  display:table;
-  width: 100%;
-  height: 100%;
+    display: table;
+    width: 100%;
+    height: 100%;
 }
+
 #row {
-  display:table-row;
+    display: table-row;
 }
+
 .db-sec {
-  display:table-cell;
-  background-color: #FFF7DC;
-  width: 33%;
-  padding:7px;
+    border: 1px solid black;
+    display: table-cell;
+    background-color: #FFF7DC;
+    width: 33%;
+    padding: 7px;
+    height:500px;
 }
+
 .overview {
-	width: 200%;
-	
+    width: 200%;
 }
