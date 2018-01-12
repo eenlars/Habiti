@@ -11,7 +11,7 @@ var ejs = require('ejs');
 var template = '<% habit_list.forEach(function(habit_item) {console.log(habit_item.title+"/"+habit_item.desc);}) %>';
 
 var context = {'habit_list':[
-    {title: 'Habit 1', desc:'Desc 1'}
+    {title: 'Habit 1', desc:'Desc 1'};
 ]};
 ejs.render(template, context);
 var con = mysql.createConnection({
